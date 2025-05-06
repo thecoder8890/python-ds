@@ -1,47 +1,120 @@
 # Python Data Structures and Algorithms
 
-No non-sense solutions to common Data Structure and Algorithm interview questions in Python. Follows a consistent approach throughout problems.
+Clean, well-documented implementations of common data structures and algorithms in Python. This repository follows a consistent approach throughout all implementations, making it ideal for learning and interview preparation.
 
-## Objective
+## Table of Contents
 
-There are a plenty of resources when it comes to interview preparations on the internet. What prompted me to create this project was the dissimilarity across different approaches and the infused complexity of the code.
+- [Overview](#overview)
+- [Python Version Compatibility](#python-version-compatibility)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Structure of the Repository](#structure-of-the-repository)
+  - [Data Structures](#data-structures)
+  - [Algorithms](#algorithms)
+  - [Bookmarks](#bookmarks)
+- [Code Style and Documentation](#code-style-and-documentation)
+- [Contributing](#contributing)
+- [Future Improvements](#future-improvements)
+- [License](#license)
 
-Feel free to contribute but please follow the Contributing Guidelines as I want to maintain the uniformity of the implementation of data structures and algorithms. Last time around, people bombarded with me with Pull Requests, Issues and Emails insisting me to merge their changes
+## Overview
 
-The open source community has helped me a lot during my interview preparations and studies while I was in my undergrad. I always wanted to give something back to the community. In my endeavour to contribute something back, I will be uploading data structures and algorithms questions in Python in this repo. Feel free to contribute and get in touch!
+This repository contains implementations of various data structures and algorithms in Python. The code is designed to be:
 
-## Structure of the repository
+- **Clean and readable**: Following PEP 8 style guidelines
+- **Well-documented**: With comprehensive docstrings and comments
+- **Educational**: Focusing on clarity rather than optimization
+- **Interview-friendly**: Covering common interview questions and patterns
 
-As of now, the repository contains 3 main directories: [**Bookmarks**](bookmarks), [**Data Structures**](data_structures) and [**Algorithms**](algorithms).
+## Python Version Compatibility
+
+The code in this repository is compatible with **Python 3.6+**. It uses modern Python features such as:
+
+- Type hints (PEP 484)
+- F-strings (Python 3.6+)
+- Modern class definitions (no need for explicit inheritance from object)
+- Up-to-date import conventions
+
+## Installation
+
+Clone the repository to your local machine:
+
+```bash
+git clone https://github.com/prabhupant/python-ds.git
+cd python-ds
+```
+
+No additional dependencies are required to run the code examples.
+
+## Usage
+
+Each implementation can be run directly as a Python script. Most files include test cases that demonstrate how to use the implementation.
+
+For example, to run the activity selection algorithm:
+
+```bash
+python algorithms/greedy/activity_selection.py
+```
+
+You can also import the implementations into your own code:
+
+```python
+from data_structures.stack.stack_using_linked_list import Stack, Element
+
+# Create a new stack
+stack = Stack()
+
+# Push elements onto the stack
+stack.push(Element(1))
+stack.push(Element(2))
+
+# Pop an element from the stack
+element = stack.pop()
+print(element.value)  # Output: 2
+```
+
+## Structure of the Repository
+
+The repository is organized into three main directories:
 
 ### Data Structures
 
-Contains all data structure questions categorised into sub-directories like stack, queue, etc according to their type.
+Contains implementations of various data structures, categorized by type:
 
-1. [Array](data_structures/array)
-2. [Dictionary]()
-3. [Binary Search Tree](data_structures/bst)
-4. [Linked List](data_structures/linked_list)
-5. [Stack](data_structures/stack)
-6. [Graphs](data_structures/graphs)
-7. [Circular Linked List](data_structures/circular_linked_list)
-8. [Doubly Linked List](data_structures/doubly_linked_list)
+1. [Array](data_structures/array) - Array manipulations and operations
+2. [Binary Search Tree](data_structures/bst) - BST implementations and operations
+3. [Binary Trees](data_structures/binary_trees) - Binary tree algorithms
+4. [Circular Linked List](data_structures/circular_linked_list) - Circular linked list implementations
+5. [Deque](data_structures/deque) - Double-ended queue implementations
+6. [Doubly Linked List](data_structures/doubly_linked_list) - Doubly linked list implementations
+7. [Fenwick Tree](data_structures/fenwick_tree) - Binary indexed tree implementations
+8. [Graphs](data_structures/graphs) - Graph algorithms and representations
+9. [Hash](data_structures/hash) - Hash table implementations
+10. [Heap](data_structures/heap) - Min and max heap implementations
+11. [Linked List](data_structures/linked_list) - Singly linked list implementations
+12. [Matrix](data_structures/matrix) - Matrix operations
+13. [Palindromic Tree](data_structures/palindromic_tree) - Specialized tree for palindromes
+14. [Queue](data_structures/queue) - Queue implementations
+15. [Segment Tree](data_structures/segment_tree) - Segment tree implementations
+16. [Stack](data_structures/stack) - Stack implementations
+17. [Strings](data_structures/strings) - String manipulation algorithms
+18. [Trie](data_structures/trie) - Trie implementations
+19. [Union Find](data_structures/union_find) - Disjoint set data structure
 
 ### Algorithms
 
-This directory contains various types of algorithm questions like Dynamic Programming, Sorting, Greedy, etc. The current structure of this directory is as follows:
+Contains implementations of various algorithms, categorized by type:
 
-1. [Dynamic Programming](algorithms/dynamic_programming)
-2. [Graphs](algorithms/graph)
-3. [Greedy](algorithms/greedy)
-4. [Math](algorithms/math)
-5. [Misc](algorithms/miscellaneous)
-6. [Sorting](algorithms/sorting)
-7. [Bit Manipulation](algorithms/bit_manipulation)
+1. [Bit Manipulation](algorithms/bit_manipulation) - Bit manipulation techniques
+2. [Dynamic Programming](algorithms/dynamic_programming) - DP solutions to common problems
+3. [Greedy](algorithms/greedy) - Greedy algorithm implementations
+4. [Math](algorithms/math) - Mathematical algorithms
+5. [Miscellaneous](algorithms/miscellaneous) - Other algorithm implementations
+6. [Sorting](algorithms/sorting) - Sorting algorithm implementations
 
 ### Bookmarks
 
-You can find useful links in this repository in the different markdown files. Below is a table of contents.
+Contains useful links to external resources, categorized by type:
 
 | Category | Link |
 | :-- | :--: |
@@ -52,21 +125,57 @@ You can find useful links in this repository in the different markdown files. Be
 | Videos | [Click Here](bookmarks/videos.md) |
 | Misc. | [Click Here](bookmarks/misc.md) |
 
-## Things need to be done
+## Code Style and Documentation
 
-As you can see, the repo is still in its infancy. Here are some key things in the to-do.
+All code in this repository follows the [PEP 8](https://www.python.org/dev/peps/pep-0008/) style guide. Each implementation includes:
 
-1. Queue questions
-2. Algorithms
-3. More questions in data structures, especially for graph, circular linked list, trees, heaps and hash.
+- A module-level docstring explaining the data structure or algorithm
+- Function/method docstrings with parameters and return values
+- Type hints for function parameters and return values
+- Inline comments explaining complex logic
+- Time and space complexity analysis
+
+Example:
+
+```python
+def binary_search(arr: List[int], target: int) -> int:
+    """
+    Perform binary search on a sorted array.
+
+    Args:
+        arr: A sorted list of integers
+        target: The value to search for
+
+    Returns:
+        The index of the target if found, -1 otherwise
+
+    Time Complexity: O(log n)
+    Space Complexity: O(1)
+    """
+    # Implementation details...
+```
 
 ## Contributing
 
-Contributions are always welcomed.
-Feel free to raise new issues, file new PRs. Consider giving it a star and fork this repo!
+Contributions are always welcome! Please read the [Contributing Guidelines](CONTRIBUTING.md) before submitting a pull request.
 
-To follow the guidelines, refer to [Contributing.md](CONTRIBUTING.md)
+Some ways to contribute:
+- Add new data structure or algorithm implementations
+- Improve existing implementations
+- Add test cases
+- Fix bugs
+- Improve documentation
+
+## Future Improvements
+
+The repository is continuously evolving. Here are some planned improvements:
+
+1. Add more queue implementations and examples
+2. Expand the algorithms section with more common algorithms
+3. Add more examples for graph algorithms, trees, heaps, and hash tables
+4. Add unit tests for all implementations
+5. Add visualization tools for data structures and algorithms
 
 ## License
 
-[MIT License](LICENSE)
+This project is licensed under the [MIT License](LICENSE).
